@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"strconv"
 	"strings"
 )
 
-func readFile(filename string) string {
+func ReadFile(filename string) []string {
 	path, err := os.Getwd()
 	if err != nil {
 		panic("Could not get working directory")
@@ -17,15 +16,14 @@ func readFile(filename string) string {
 	if err != nil {
 		panic(fmt.Sprint("Error reading file: ", filename))
 	}
-	return string(contents)
+	return strings.Split(string(contents), "\n")
 }
 
-func ParseInput(inputFile string) []int {
-	stringInput := strings.Split(readFile(inputFile), "\n")
+func ParseNumbers(filename string) []int {
+	stringInput := ReadFile(filename)
 	numbers := make([]int, len(stringInput))
 	for i, s := range stringInput {
-		num, _ := strconv.Atoi(s)
-		numbers[i] = num
+		numbers[i] = StringToInt(s)
 	}
 	return numbers
 }
