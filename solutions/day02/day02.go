@@ -8,14 +8,14 @@ import (
 )
 
 type rule struct {
-	min int
-	max int
+	min    int
+	max    int
 	letter string
 }
 
-func Solve()  {
+func Solve() {
 	utils.PrintDay(2)
-	input := utils.ReadFile("/inputs/day02.txt")
+	input := utils.ReadFile("/inputs/day02/day02.txt")
 	fmt.Println("Problem 1: ", problem1(input))
 	fmt.Println("Problem 2: ", problem2(input))
 }
@@ -36,7 +36,7 @@ func problem2(input []string) int {
 	inputMap := parseInput(input)
 	correct := 0
 	for key, value := range inputMap {
-		if (string(key[value.min - 1]) == value.letter) != (string(key[value.max - 1]) == value.letter) {
+		if (string(key[value.min-1]) == value.letter) != (string(key[value.max-1]) == value.letter) {
 			correct++
 		}
 	}
@@ -49,9 +49,9 @@ func parseInput(input []string) map[string]rule {
 		split := strings.Split(s, ":")
 		rules := strings.Split(split[0], " ")
 		counts := strings.Split(rules[0], "-")
-		parsedInputs[strings.TrimSpace(split[1])] = rule {
-			min: utils.StringToInt(counts[0]),
-			max: utils.StringToInt(counts[1]),
+		parsedInputs[strings.TrimSpace(split[1])] = rule{
+			min:    utils.StringToInt(counts[0]),
+			max:    utils.StringToInt(counts[1]),
 			letter: rules[1],
 		}
 	}

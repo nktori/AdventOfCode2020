@@ -8,7 +8,7 @@ import (
 
 func Solve()  {
 	utils.PrintDay(3)
-	input := utils.ReadFile("/inputs/day03.txt")
+	input := utils.ReadFile("/inputs/day03/day03.txt")
 	fmt.Println("Problem 1: ", problem1(input))
 	fmt.Println("Problem 2: ", problem2(input))
 }

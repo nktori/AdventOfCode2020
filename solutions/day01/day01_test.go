@@ -7,7 +7,7 @@ import (
 	"github.com/nktori/AdventOfCode2020/utils"
 )
 
-var testPath = "/../../inputs/test/"
+var testPath = "/../../inputs/day01/"
 
 func TestProblem1(t *testing.T) {
 	input := utils.ParseNumbers(fmt.Sprint(testPath,"day01_test.txt"))
