@@ -8,10 +8,10 @@ import (
 )
 
 func Solve() {
-	utils.PrintDay(4)
-	input := utils.ReadFile("/inputs/day05/day05.txt")
-	fmt.Println("Problem 1: ", problem1(input))
-	fmt.Println("Problem 2: ", problem2(input))
+	utils.PrintDay(5, "Binary Boarding")
+	input := utils.ParseStrings("/inputs/day05/day05.txt")
+	fmt.Println("Problem 1:", problem1(input))
+	fmt.Println("Problem 2:", problem2(input))
 }
 
 func problem1(input []string) int {
@@ -28,7 +28,7 @@ func problem2(input []string) int {
 		ids[i] = getBoardingId(b)
 	}
 	sort.Ints(ids)
-	for i := 0; i < len(ids) - 1; i++ {
+	for i := 0; i < len(ids)-1; i++ {
 		if ids[i+1]-ids[i] == 2 {
 			return ids[i] + 1
 		}

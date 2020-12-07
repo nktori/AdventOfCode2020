@@ -14,10 +14,10 @@ type rule struct {
 }
 
 func Solve() {
-	utils.PrintDay(2)
-	input := utils.ReadFile("/inputs/day02/day02.txt")
-	fmt.Println("Problem 1: ", problem1(input))
-	fmt.Println("Problem 2: ", problem2(input))
+	utils.PrintDay(2, "Password Philosophy")
+	input := utils.ParseStrings("/inputs/day02/day02.txt")
+	fmt.Println("Problem 1:", problem1(input))
+	fmt.Println("Problem 2:", problem2(input))
 }
 
 func problem1(input []string) int {

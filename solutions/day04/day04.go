@@ -20,13 +20,13 @@ type passport struct {
 }
 
 func Solve() {
-	utils.PrintDay(4)
-	input := utils.ReadFile("/inputs/day04/day04.txt")
-	fmt.Println("Problem 1: ", problem1(input))
-	fmt.Println("Problem 2: ", problem2(input))
+	utils.PrintDay(4, "Passport Processing")
+	input := utils.ParseGroups("/inputs/day04/day04.txt")
+	fmt.Println("Problem 1:", problem1(input))
+	fmt.Println("Problem 2:", problem2(input))
 }
 
-func problem1(input []string) int {
+func problem1(input [][]string) int {
 	passports := parseInput(input)
 	valid := 0
 	for _, p := range passports {
@@ -37,7 +37,7 @@ func problem1(input []string) int {
 	return valid
 }
 
-func problem2(input []string) int {
+func problem2(input [][]string) int {
 	passports := parseInput(input)
 	valid := 0
 	for _, p := range passports {
@@ -99,28 +99,23 @@ func matchPassportId(id string) bool {
 	return match
 }
 
-func parseInput(input []string) []passport {
+func parseInput(input [][]string) []passport {
 	var passports []passport
-	var fields = map[string]string{}
-	for _, s := range input {
-		if s == "" {
-			passports = append(passports, passport{
-				birthYear:      fields["byr"],
-				issueYear:      fields["iyr"],
-				expirationYear: fields["eyr"],
-				height:         fields["hgt"],
-				hairColour:     fields["hcl"],
-				eyeColour:      fields["ecl"],
-				id:             fields["pid"],
-			})
-			fields = map[string]string{}
-			continue
-		}
-		lineSplit := strings.Split(s, " ")
-		for _, f := range lineSplit {
-			split := strings.Split(f, ":")
+	for _, group := range input {
+		fields := map[string]string{}
+		for _, field := range group {
+			split := strings.Split(field, ":")
 			fields[split[0]] = split[1]
 		}
+		passports = append(passports, passport{
+			birthYear:      fields["byr"],
+			issueYear:      fields["iyr"],
+			expirationYear: fields["eyr"],
+			height:         fields["hgt"],
+			hairColour:     fields["hcl"],
+			eyeColour:      fields["ecl"],
+			id:             fields["pid"],
+		})
 	}
 	return passports
 }

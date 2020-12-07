@@ -10,7 +10,7 @@ import (
 var testPath = "/../../inputs/day01/"
 
 func TestProblem1(t *testing.T) {
-	input := utils.ParseNumbers(fmt.Sprint(testPath,"day01_test.txt"))
+	input := utils.ParseNumbers(fmt.Sprint(testPath, "day01_test.txt"))
 	result := problem1(input)
 	if result != 514579 {
 		t.Errorf("Failure - received: %d, expected: %d.", result, 514579)
@@ -18,7 +18,7 @@ func TestProblem1(t *testing.T) {
 }
 
 func TestProblem2(t *testing.T) {
-	input := utils.ParseNumbers(fmt.Sprint(testPath,"day01_test.txt"))
+	input := utils.ParseNumbers(fmt.Sprint(testPath, "day01_test.txt"))
 	result := problem2(input)
 	if result != 241861950 {
 		t.Errorf("Failure - received: %d, expected: %d.", result, 241861950)
