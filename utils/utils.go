@@ -20,7 +20,22 @@ func StringToInt(s string) int {
 func MaxInt(a, b int) int {
 	if a > b {
 		return a
-	} else {
-		return b
 	}
+	return b
+}
+
+func MinInt(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func MinMax(arr []int) (int, int) {
+	min, max := arr[0], arr[0]
+	for _, v := range arr {
+		min = MinInt(min, v)
+		max = MaxInt(max, v)
+	}
+	return min, max
 }
