@@ -14,6 +14,7 @@ import (
 	"github.com/nktori/AdventOfCode2020/solutions/day09"
 	"github.com/nktori/AdventOfCode2020/solutions/day10"
 	"github.com/nktori/AdventOfCode2020/solutions/day11"
+	"github.com/nktori/AdventOfCode2020/solutions/day12"
 )
 
 func main() {
@@ -29,5 +30,6 @@ func main() {
 	day09.Solve()
 	day10.Solve()
 	day11.Solve()
+	day12.Solve()
 	fmt.Println("===========================")
 }

@@ -39,3 +39,10 @@ func MinMax(arr []int) (int, int) {
 	}
 	return min, max
 }
+
+func AbsInt(i int) int {
+	if i >= 0 {
+		return i
+	}
+	return i * -1
+}

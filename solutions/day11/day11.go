@@ -8,7 +8,6 @@ import (
 
 func Solve() {
 	utils.PrintDay(11, "Seating System")
-
 	input := utils.ParseStrings("/inputs/day11/day11.txt")
 	fmt.Println("Problem 1:", problem1(input))
 	fmt.Println("Problem 2:", problem2(input))

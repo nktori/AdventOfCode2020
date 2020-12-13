@@ -10,7 +10,6 @@ import (
 
 func Solve() {
 	utils.PrintDay(10, "Adapter Array")
-
 	input := utils.ParseNumbers("/inputs/day10/day10.txt")
 	fmt.Println("Problem 1:", problem1(input))
 	fmt.Println("Problem 2:", problem2(input))
