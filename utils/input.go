@@ -39,3 +39,7 @@ func ParseGroups(filename string) [][]string {
 	}
 	return groups
 }
+
+func ParseAsGroups(filename string) []string {
+	return strings.Split(strings.TrimSpace(readFile(filename)), "\n\n")
+}
