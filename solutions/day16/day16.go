@@ -16,7 +16,6 @@ func Solve() {
 	input := utils.ParseAsGroups("/inputs/day16/day16.txt")
 	fmt.Println("Problem 1:", problem1(input))
 	fmt.Println("Problem 2:", problem2(input))
-	problem2(input)
 }
 
 func problem1(input []string) int {
